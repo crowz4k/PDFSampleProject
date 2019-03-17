@@ -1,1 +1,1 @@
-# PDFSampleProject
+# Simple project for rendering pdf!

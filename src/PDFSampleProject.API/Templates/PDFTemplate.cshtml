@@ -1,0 +1,42 @@
+﻿@model List<PDFSampleProject.API.Data.CarDTO>
+
+<html>
+<head>
+    <style>
+        body{ font-family: "Arial"; font-size: 14px;}
+        .car-name {
+            color: darkgray;
+        }
+
+        .car-max-speed {
+            color: tomato;
+        }
+
+        .car-registration {
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    @foreach (var car in Model)
+    {
+        <div>
+            <span>Car name:</span>
+            <span class="car-name">@car.NameOfCar</span>
+        </div>
+        <div>
+            <span>Cars first registration:</span>
+            <span class="car-registration">@car.FirstRegistration.ToShortDateString()</span>
+        </div>
+        <div>
+            <span>Cars max speed:</span>
+            <span class="car-max-speed">@car.MaxSpeed</span>
+        </div>
+        <div>
+            <span> Number of doors:</span>
+            <span> @car.NumberOfDoors</span>
+        </div>
+        <br />
+    }
+</body>
+</html>
