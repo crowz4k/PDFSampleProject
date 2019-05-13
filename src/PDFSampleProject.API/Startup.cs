@@ -39,13 +39,13 @@ namespace PDFSampleProject.API
                 return engine;
             });
 
-            var processSufix = "32bit";
+            var processSuffix = "32bit";
             if (Environment.Is64BitProcess && IntPtr.Size == 8)
             {
-                processSufix = "64bit";
+                processSuffix = "64bit";
             }
             var context = new CustomAssemblyLoadContext();
-            context.LoadUnmanagedLibrary(Path.Combine(Directory.GetCurrentDirectory(), $"PDFNative\\{processSufix}\\libwkhtmltox.dll"));
+            context.LoadUnmanagedLibrary(Path.Combine(Directory.GetCurrentDirectory(), $"PDFNative\\{processSuffix}\\libwkhtmltox.dll"));
 
             services.AddScoped<IPDFService, PDFService>();
 
